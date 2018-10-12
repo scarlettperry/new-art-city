@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 
 
 class App extends Component {
@@ -23,11 +23,19 @@ class App extends Component {
       .then(data => this.setState({compactJson: data}))
   }
 
+  slaponDOM = () => {
+    console.log("hello");
+    if (this.state.compactJson.Events) {
+      console.log(this.state.compactJson.Events.Event.map(obj => console.log(obj)))
+    }
+  }
+
   render() {
-    console.log(this.state);
+    this.slaponDOM()
     return (
       <div className="App">
         New Art City!
+
       </div>
     );
   }
