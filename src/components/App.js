@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import Homepage from './Homepage'
 import UserProfile from './UserProfile'
+import Navbar from './Navbar'
 
 import { loadEvents } from '../actions/index'
 import { connect } from 'react-redux'
@@ -17,6 +18,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>New Art City!</h1>
+        <Navbar />
         <Homepage />
         <UserProfile />
       </div>

@@ -2,14 +2,15 @@ import React, { Component } from 'react'
 
 
 
-class SingleRecentActivity extends Component {
+class Navbar extends Component {
 
   render(){
     return (
       <div>
+        
       </div>
     )
   }
 }
 
-export default SingleRecentActivity
+export default Navbar

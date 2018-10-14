@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import SingleExhibit from './SingleExhibit'
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 
 class ExhibitionGrid extends Component {
   render(){
-    console.log(this.props)
+    // console.log(this.props)
     let singleExhibit = this.props.events.map(obj => <SingleExhibit event={obj}/>)
     return (
       <div>
@@ -15,10 +15,10 @@ class ExhibitionGrid extends Component {
 }
 
 // receiving current state as props
-const mapStateToProps = (state) => {
-  return {
-    events: state.events
-  }
-}
+// const mapStateToProps = (state) => {
+//   return {
+//     events: state.events
+//   }
+// }
 
-export default connect(mapStateToProps)(ExhibitionGrid)
+export default ExhibitionGrid
