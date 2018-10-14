@@ -3,7 +3,7 @@ export const loadEvents = () => {
   return (dispatch) => {
       const convert = require('xml-js')
       const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
-      const targetUrl = 'http://www.nyartbeat.com/list/event_lastdays.en.xml'
+      const targetUrl = 'http://www.nyartbeat.com/list/event_free.en.xml'
         fetch(proxyUrl + targetUrl)
           .then(respone => respone.text())
           .then(data => convert.xml2json(data, {compact: true, spaces: 4}))

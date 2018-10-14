@@ -8,7 +8,6 @@ class ExhibitionGrid extends Component {
     let singleExhibit = this.props.events.map(obj => <SingleExhibit event={obj}/>)
     return (
       <div>
-        Hello from ExhibitionGrid
         {singleExhibit}
       </div>
     )

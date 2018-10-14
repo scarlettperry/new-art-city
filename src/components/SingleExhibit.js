@@ -6,6 +6,7 @@ exhibitDetails = () => {
     if (this.props.event) {
       return (
         <div>
+          <br/>
           <img src={this.props.event.Image[2]["_attributes"]["src"]}/><br/>
           {this.props.event.Name["_text"]}<br/>
           @{this.props.event.Venue.Name["_text"]}<br/>
