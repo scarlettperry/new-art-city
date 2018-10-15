@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import MapContainer from './MapContainer'
+
 import ExhibitionGrid from './ExhibitionGrid'
 import Filter from './Filter'
 import { connect } from 'react-redux'
@@ -77,6 +79,7 @@ class Homepage extends Component {
         <ExhibitionGrid
           events={this.props.events}
         />
+        <MapContainer />
       </div>
     )
   }
