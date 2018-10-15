@@ -5,7 +5,7 @@ import SingleExhibit from './SingleExhibit'
 class ExhibitionGrid extends Component {
   render(){
     // console.log(this.props)
-    let singleExhibit = this.props.events.map(obj => <SingleExhibit event={obj}/>)
+    let singleExhibit = this.props.events.map(obj => <SingleExhibit key={obj["_attributes"]["id"]} event={obj}/>)
     return (
       <div>
         {singleExhibit}

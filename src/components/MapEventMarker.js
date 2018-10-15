@@ -5,7 +5,12 @@ import point from "../images/point.png";
 export default class MapEventMarker extends React.Component {
 
   render(){
-    let location = {lat: 40.7033, lng: -73.9881}
+    console.log(this.props)
+    let latitude = Number(this.props.event.Latitude["_text"])
+    let longitude = Number(this.props.event.Longitude["_text"])
+    console.log(latitude, longitude)
+
+    let location = {lat: latitude, lng: longitude }
     return(
         <Marker
           position={location}
@@ -15,3 +20,16 @@ export default class MapEventMarker extends React.Component {
     );
   }
 }
+
+// Questcard.defaultProps = {
+//   question: {
+//     equation: "1+1",
+//   }
+// }
+
+// MapEventMarker.defaultProps = {
+//   event: {
+//     Latitude["_text"]: ,
+//
+//   }
+// }

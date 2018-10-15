@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import MapContainer from './MapContainer'
-
 import ExhibitionGrid from './ExhibitionGrid'
 import Filter from './Filter'
+
 import { connect } from 'react-redux'
+import { setFilteredLocations } from '../actions/index'
 
 class Homepage extends Component {
 
@@ -33,31 +34,33 @@ class Homepage extends Component {
 
     if (this.props.events) {
       this.props.events.filter(obj => {
-        if (obj.Media["_text"] !== undefined) {
-          if (this.state["2D Media"] !== "" && obj.Media["_text"].includes(this.state["2D Media"])) {
+
+        let string = obj.Media["_text"] || obj.Media.map((obj2) => {return obj2["_text"]}).join(" ")
+        // console.log(string);
+          if (this.state["2D Media"] !== "" && string.includes(this.state["2D Media"])) {
             twoDMediaEventsArray.push(obj)
           }
-          else if (this.state["3D Media"] !== "" && obj.Media["_text"].includes(this.state["3D Media"])) {
+          else if (this.state["3D Media"] !== "" && string.includes(this.state["3D Media"])) {
             threeDMediaEventsArray.push(obj)
           }
-          else if (this.state["Screen Media"] !== "" && obj.Media["_text"].includes(this.state["Screen Media"])) {
+          else if (this.state["Screen Media"] !== "" && string.includes(this.state["Screen Media"])) {
             screenMediaEventsArray.push(obj)
           }
-          else if (this.state["Other Media"] !== "" && obj.Media["_text"].includes(this.state["Other Media"])) {
+          else if (this.state["Other Media"] !== "" && string.includes(this.state["Other Media"])) {
             otherMediaEventsArray.push(obj)
           }
           else if (this.state["2D Media"] === "" && this.state["3D Media"] === "" && this.state["Screen Media"] === ""
             && this.state["Other Media"] === "" && this.state["Other Media"] === ""
           ) {
             allEventsArray.push(obj)
-            return allEventsArray
           }
-        }
       }
       )
     }
 
     let filteredEventsArray = twoDMediaEventsArray.concat(threeDMediaEventsArray, screenMediaEventsArray, otherMediaEventsArray)
+
+    this.props.setFilteredLocations(filteredEventsArray)
 
     if (allEventsArray.length > 1) {
       return allEventsArray
@@ -69,6 +72,7 @@ class Homepage extends Component {
   }//closes function
 
   render(){
+    // console.log(this.props.events)
     return (
       <div>
         <Filter
@@ -90,4 +94,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Homepage)
+export default connect(mapStateToProps, { setFilteredLocations })(Homepage)

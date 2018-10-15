@@ -7,7 +7,7 @@ exhibitDetails = () => {
       return (
         <div>
           <br/>
-          <img src={this.props.event.Image[2]["_attributes"]["src"]}/><br/>
+          <img src={this.props.event.Image[2]["_attributes"]["src"]} alt="event"/><br/>
           {this.props.event.Name["_text"]}<br/>
           @{this.props.event.Venue.Name["_text"]}<br/>
           <i>Days till closing</i>: {this.props.event.DaysBeforeEnd["_text"] === "0" ? <strong>TODAY</strong> : `${this.props.event.DaysBeforeEnd["_text"]}`}<br/>
