@@ -7,7 +7,7 @@ class ExhibitionGrid extends Component {
     // console.log(this.props)
     let singleExhibit = this.props.events.map(obj => <SingleExhibit key={obj["_attributes"]["id"]} event={obj}/>)
     return (
-      <div>
+      <div className="exhibition-grid">
         {singleExhibit}
       </div>
     )

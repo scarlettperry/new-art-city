@@ -8,13 +8,7 @@ import { connect } from 'react-redux'
 const Map = withScriptjs(withGoogleMap((props) =>{
 
   const singleMarker = props.filteredLocations.map (event => <MapEventMarker event={event}/>)
-
-  // const markers = props.doctors.map( doctor => <EventMarker
-  //                   key={doctor.uid}
-  //                   doctor={doctor}
-  //                   location={{lat: doctor.closestPractice.lat, lng: doctor.closestPractice.lon}}
-  //                 />);
-  // console.log(props)
+  
   return (
       <GoogleMap
         defaultZoom={11}

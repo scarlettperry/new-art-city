@@ -8,7 +8,7 @@ export default class MapContainer extends Component {
 			<Map
 				googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo&v=3.exp&libraries=geometry,drawing,places`}
 				loadingElement={<div style={{ height: `100%` }} />}
-				containerElement={<div style={{ height: `600px`, width: `600px` }} />}
+				containerElement={<div style={{ height: `500px`, width: `600px` }} />}
 				mapElement={<div style={{ height: `100%` }} />}
 			/>
 		);
