@@ -10,74 +10,72 @@ class Homepage extends Component {
   constructor(){
     super()
     this.state = {
-      Painting: "",
-      Calligraphy: "",
-      Illustration: "",
-      Drawing: "",
-      Graphics: "",
-      Photography: "",
-      Architecture: "",
-      Sculpture: "",
-      Crafts: "",
-      Fashion: "",
-      Furniture: "",
-      Installation: "",
-      Product: "",
-      Cermaics: "",
-      Film: "",
-      Digital: "",
-      "Video Installation": "",
-      "Performance Art": ""
+      "2D Media": "",
+      "3D Media": "",
+      "Screen Media": "",
+      "Other Media": ""
+
     }
   }
 
-  handleChange = (event) => {
+  handleFilter = (event) => {
     this.setState({
-    [event.target.innerText]: event.target.innerText
+      [event.target.name]: event.target.value
     })
   }
 
-  // filterEvents = () => {
-  //   if (this.props.events) {
-  //     if (
-  //       this.state.Painting === "" && this.state.Calligraphy === "" && this.state.Illustration === "" && this.state.Drawing === "" && this.state.Graphics === "" && this.state.Photography === "" && this.state.Architecture === ""
-  //       && this.state.Sculpture === "" && this.state.Crafts === ""  && this.state.Fashion === ""  && this.state.Furniture === ""
-  //       && this.state.Installation === "" && this.state.Product === "" && this.state.Cermaics === "" && this.state.Film === ""
-  //       && this.state.Digital === "" && this.state["Video Installation"] === "" && this.state["Performance Art"] === ""
-  //     ) {
-  //       console.log("I wasnt chosen")
-  //       console.log(this.props.events)
-  //     }
-  //     else if (
-  //       this.state.Painting !== "" || this.state.Calligraphy !== "" || this.state.Illustration !== "" || this.state.Drawing !== "" || this.state.Graphics !== "" || this.state.Photography !== "" || this.state.Architecture !== ""
-  //       || this.state.Sculpture !== "" || this.state.Crafts !== ""  || this.state.Fashion !== ""  || this.state.Furniture !== ""
-  //       || this.state.Installation !== "" || this.state.Product !== "" || this.state.Cermaics !== "" || this.state.Film !== ""
-  //       || this.state.Digital !== "" || this.state["Video Installation"] !== "" || this.state["Performance Art"] !== ""
-  //     ) {
-  //       console.log("I was chosen")
-  //       return this.props.events.filter(obj => obj["Media"]["_text"].includes(this.state.Painting)
-  //       || obj["Media"]["_text"].includes(this.state.Calligraphy) || obj["Media"]["_text"].includes(this.state.Illustration) ||
-  //       obj["Media"]["_text"].includes(this.state.Drawing) || obj["Media"]["_text"].includes(this.state.Graphics) || obj["Media"]["_text"].includes(this.state.Photography) || obj["Media"]["_text"].includes(this.state.Architecture)
-  //       || obj["Media"]["_text"].includes(this.state.Sculpture) || obj["Media"]["_text"].includes(this.state.Crafts) || obj["Media"]["_text"].includes(this.state.Fashion) || obj["Media"]["_text"].includes(this.state.Furniture) ||
-  //       obj["Media"]["_text"].includes(this.state.Installation) || obj["Media"]["_text"].includes(this.state.Product) || obj["Media"]["_text"].includes(this.state.Cermaics) || obj["Media"]["_text"].includes(this.state.Film) ||
-  //       obj["Media"]["_text"].includes(this.state.Digital) || obj["Media"]["_text"].includes(this.state["Video Installation"]) ||
-  //       obj["Media"]["_text"].includes(this.state["Performance Art"]))
-  //     }
-  //   }
-  // }
+  filterMedia = () => {
+    let allEventsArray = []
+    let twoDMediaEventsArray = []
+    let threeDMediaEventsArray = []
+    let screenMediaEventsArray = []
+    let otherMediaEventsArray = []
 
+    if (this.props.events) {
+      this.props.events.filter(obj => {
+        if (obj.Media["_text"] !== undefined) {
+          if (this.state["2D Media"] !== "" && obj.Media["_text"].includes(this.state["2D Media"])) {
+            twoDMediaEventsArray.push(obj)
+          }
+          else if (this.state["3D Media"] !== "" && obj.Media["_text"].includes(this.state["3D Media"])) {
+            threeDMediaEventsArray.push(obj)
+          }
+          else if (this.state["Screen Media"] !== "" && obj.Media["_text"].includes(this.state["Screen Media"])) {
+            screenMediaEventsArray.push(obj)
+          }
+          else if (this.state["Other Media"] !== "" && obj.Media["_text"].includes(this.state["Other Media"])) {
+            otherMediaEventsArray.push(obj)
+          }
+          else if (this.state["2D Media"] === "" && this.state["3D Media"] === "" && this.state["Screen Media"] === ""
+            && this.state["Other Media"] === "" && this.state["Other Media"] === ""
+          ) {
+            allEventsArray.push(obj)
+            return allEventsArray
+          }
+        }
+      }
+      )
+    }
 
+    let filteredEventsArray = twoDMediaEventsArray.concat(threeDMediaEventsArray, screenMediaEventsArray, otherMediaEventsArray)
+
+    if (allEventsArray.length > 1) {
+      return allEventsArray
+    }
+    else {
+      return filteredEventsArray
+    }
+
+  }//closes function
 
   render(){
-    console.log(this.props)
-    console.log(this.state);
     return (
       <div>
         <Filter
-          handleChange={this.handleChange}
+          handleFilter={this.handleFilter}
         />
         <ExhibitionGrid
-          events={this.props.events}
+          events={this.filterMedia()}
         />
         <MapContainer />
       </div>
