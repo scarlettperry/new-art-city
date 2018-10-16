@@ -15,7 +15,7 @@ const reducer = (state = initialState, action) => {
     case "LOAD_USER_EVENTS":
       return {
         ...state,
-        userEvents: [...state.userEvents, action.payload.eventsArray]
+        userEvents: [...state.userEvents, ...action.payload.eventsArray]
       }
 
     case "SET_FILTERED_LOCATIONS":
@@ -25,7 +25,8 @@ const reducer = (state = initialState, action) => {
       }
 
     case "SELECTED_EVENT":
-    // console.log(action.payload.eventObj)
+    console.log(action.payload.eventObj)
+    console.log([...state.userEvents, action.payload.eventObj].flat())
       return {
         ...state,
         userEvents: [...state.userEvents, action.payload.eventObj].flat()

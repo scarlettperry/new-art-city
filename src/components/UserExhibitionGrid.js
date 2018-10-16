@@ -1,13 +1,23 @@
 import React, { Component } from 'react'
+import UserSingleExhibit from './UserSingleExhibit'
+
 import { connect } from 'react-redux'
 
 class UserExhibitionGrid extends Component {
 
+  singleUserEvent = () => {
+  return this.props.userEvents.map(event =>
+        <UserSingleExhibit
+          key={event.id}
+          event={event}
+        />)
+  }
+
   render(){
-    console.log(this.props);
+    console.log(this.props.userEvents)
     return (
       <div>
-        Hello from UserExhibitionGrid
+        {this.singleUserEvent()}
       </div>
     )
   }

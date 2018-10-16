@@ -14,7 +14,7 @@ exhibitDetails = () => {
           {this.props.event.Name["_text"]}<br/>
           @{this.props.event.Venue.Name["_text"]}<br/>
           <i>Days till closing</i>: {this.props.event.DaysBeforeEnd["_text"] === "0" ? <strong>TODAY</strong> : `${this.props.event.DaysBeforeEnd["_text"]}`}<br/>
-          <button onClick={()=>this.props.postUserEvents(this.props.event)}>Save to Profile</button><br/>
+          <button onClick={()=>this.props.postUserEvents(this.props.event)}>Save to Profile</button><br/><br/>
         </div>
       )
     }

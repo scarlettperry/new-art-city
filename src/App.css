@@ -1,20 +1,9 @@
+/* exhibition grid scroll bar */
 .exhibition-grid {
-  /* border-style: inset; */
-      /* border-style: solid; */
-  /* border-width: 20px; */
-  /* background-color: #07195E; */
   height: 500px;
-  /* width: 200px; */
   padding: 20px;
   overflow-y: scroll;
-  /* border-right-color: #4759A0;
-  border-bottom-color: #4759A0; */
-
-  /* border-left-color: #1D317F;
-  border-top-color: #1D317F; */
 }
-
-
 
 /* React package css */
 .App {
