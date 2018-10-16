@@ -8,6 +8,7 @@ class RecentActivityGrid extends Component {
   render(){
     return (
       <div>
+        I'm the recent activity grid
         <SingleRecentActivity />
       </div>
     )

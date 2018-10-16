@@ -6,15 +6,20 @@ import { connect } from 'react-redux'
 
 
 const Map = withScriptjs(withGoogleMap((props) =>{
+  const renderSingleMarker = () => {
+    if (props.filteredLocations) {
+      return props.filteredLocations.map (event => <MapEventMarker event={event}/>)
+    }
+  }
 
-  const singleMarker = props.filteredLocations.map (event => <MapEventMarker event={event}/>)
-  
+  // const singleMarker = props.filteredLocations.map (event => <MapEventMarker event={event}/>)
+
   return (
       <GoogleMap
         defaultZoom={11}
         center={ { lat:  40.7484, lng: -73.9857 } }
         >
-      {singleMarker}
+      {renderSingleMarker()}
       </GoogleMap>
     );
   }
