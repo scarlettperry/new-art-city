@@ -4,7 +4,7 @@ import ExhibitionGrid from './ExhibitionGrid'
 import Filter from './Filter'
 
 import { connect } from 'react-redux'
-import { setFilteredLocations } from '../actions/index'
+import { setFilteredLocations } from '../actions/googleMap'
 
 class Homepage extends Component {
 
@@ -72,7 +72,7 @@ class Homepage extends Component {
   }//closes function
 
   render(){
-    // console.log(this.props.events)
+    // console.log(this.props)
     return (
       <div>
         <Filter

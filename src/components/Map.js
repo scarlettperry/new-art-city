@@ -7,8 +7,8 @@ import { connect } from 'react-redux'
 
 const Map = withScriptjs(withGoogleMap((props) =>{
 
-  const singleMarker = props.filteredLocations.map (event => <MapEventMarker event={event}/>)
-  
+  const singleMarker = props.filteredLocations.map (event => <MapEventMarker key={event["_attributes"]["id"]} event={event}/>)
+
   return (
       <GoogleMap
         defaultZoom={11}

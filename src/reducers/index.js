@@ -12,17 +12,24 @@ const reducer = (state = initialState, action) => {
         events: action.payload.events.Events.Event
       }
 
+    case "LOAD_USER_EVENTS":
+      return {
+        ...state,
+        userEvents: [...state.userEvents, action.payload.eventsArray]
+      }
+
     case "SET_FILTERED_LOCATIONS":
       return {
         ...state,
         filteredLocations: action.payload.eventsArray
       }
 
-    // case "SELECTED_EVENT":
-    //   return {
-    //     ...state,
-    //     SELECTED_EVENT: action.payload.eventOj
-    //   }
+    case "SELECTED_EVENT":
+    // console.log(action.payload.eventObj)
+      return {
+        ...state,
+        userEvents: [...state.userEvents, action.payload.eventObj].flat()
+      }
 
     default:
      return state

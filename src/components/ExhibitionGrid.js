@@ -3,9 +3,14 @@ import SingleExhibit from './SingleExhibit'
 // import { connect } from 'react-redux'
 
 class ExhibitionGrid extends Component {
+
   render(){
-    // console.log(this.props)
-    let singleExhibit = this.props.events.map(obj => <SingleExhibit key={obj["_attributes"]["id"]} event={obj}/>)
+    let singleExhibit = this.props.events.map(obj =>
+      <SingleExhibit
+        key={obj["_attributes"]["id"]}
+        event={obj}
+      />)
+
     return (
       <div className="exhibition-grid">
         {singleExhibit}
@@ -13,12 +18,5 @@ class ExhibitionGrid extends Component {
     )
   }
 }
-
-// receiving current state as props
-// const mapStateToProps = (state) => {
-//   return {
-//     events: state.events
-//   }
-// }
 
 export default ExhibitionGrid

@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { postUserEvents } from '../actions/railsAPI'
+
 
 class SingleExhibit extends Component {
 
@@ -10,8 +13,8 @@ exhibitDetails = () => {
           <img src={this.props.event.Image[2]["_attributes"]["src"]} alt="event"/><br/>
           {this.props.event.Name["_text"]}<br/>
           @{this.props.event.Venue.Name["_text"]}<br/>
-          {/* <i>Days till closing</i>: {this.props.event.DaysBeforeEnd["_text"] === "0" ? <strong>TODAY</strong> : `${this.props.event.DaysBeforeEnd["_text"]}`}<br/> */}
-          <button>Save to Profile</button><br/>
+          <i>Days till closing</i>: {this.props.event.DaysBeforeEnd["_text"] === "0" ? <strong>TODAY</strong> : `${this.props.event.DaysBeforeEnd["_text"]}`}<br/>
+          <button onClick={()=>this.props.postUserEvents(this.props.event)}>Save to Profile</button><br/>
         </div>
       )
     }
@@ -27,4 +30,4 @@ exhibitDetails = () => {
   }
 }
 
-export default SingleExhibit
+export default connect(null, { postUserEvents })(SingleExhibit)

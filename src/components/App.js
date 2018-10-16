@@ -4,7 +4,8 @@ import Homepage from './Homepage'
 import UserProfile from './UserProfile'
 import Navbar from './Navbar'
 
-import { loadEvents } from '../actions/index'
+import { loadEvents } from '../actions/externalAPI'
+import { loadUserEvents } from '../actions/railsAPI'
 import { connect } from 'react-redux'
 
 //routers
@@ -16,6 +17,7 @@ class App extends Component {
   //dispatching action to change initial state
   componentDidMount(){
     this.props.loadEvents()
+    this.props.loadUserEvents()
   }
 
   render() {
@@ -32,4 +34,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(connect(null, { loadEvents })(App))
+export default withRouter(connect(null, { loadEvents, loadUserEvents })(App))

@@ -8,7 +8,7 @@ export default class MapEventMarker extends React.Component {
     // console.log(this.props)
     let latitude = Number(this.props.event.Latitude["_text"])
     let longitude = Number(this.props.event.Longitude["_text"])
-    console.log(latitude, longitude)
+    // console.log(latitude, longitude)
 
     let location = {lat: latitude, lng: longitude }
     return(
