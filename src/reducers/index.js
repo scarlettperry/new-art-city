@@ -1,6 +1,7 @@
 const initialState = {
   events: [],
-  filteredLocations : []
+  filteredLocations : [],
+  userEvents: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -11,11 +12,17 @@ const reducer = (state = initialState, action) => {
         events: action.payload.events.Events.Event
       }
 
-      case "SET_FILTERED_LOCATIONS":
-        return {
-          ...state,
-          filteredLocations: action.payload.eventsArray
-        }
+    case "SET_FILTERED_LOCATIONS":
+      return {
+        ...state,
+        filteredLocations: action.payload.eventsArray
+      }
+
+    // case "SELECTED_EVENT":
+    //   return {
+    //     ...state,
+    //     SELECTED_EVENT: action.payload.eventOj
+    //   }
 
     default:
      return state

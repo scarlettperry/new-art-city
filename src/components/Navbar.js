@@ -7,10 +7,11 @@ class Navbar extends Component {
   render(){
     return (
       <div>
-        
+
       </div>
     )
   }
 }
 
 export default Navbar
+//use withRouter maybe

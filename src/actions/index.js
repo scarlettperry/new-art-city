@@ -29,3 +29,12 @@ export const setFilteredLocations = (eventsArray) => {
     }
   }
 }
+
+// export const selectedEvent = (eventOj) => {
+//   return {
+//     type: "SELECTED_EVENT",
+//     payload: {
+//       eventOj
+//     }
+//   }
+// }
