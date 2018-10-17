@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class UserSingleExhibit extends Component {
 
   render(){
-    console.log(this.props.event)
+    // console.log(this.props.event)
     return (
       <div>
         <img src={this.props.event["img_url"]} alt="event"/><br/>
