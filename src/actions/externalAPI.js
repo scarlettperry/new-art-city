@@ -3,7 +3,7 @@ export const loadEvents = () => {
   // console.log("yay in redux!")
   return (dispatch) => {
     const convert = require('xml-js')
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+    const proxyUrl = 'https://fierce-depths-54082.herokuapp.com/'
     const targetUrl = 'http://www.nyartbeat.com/list/event_free.en.xml'
       fetch(proxyUrl + targetUrl)
         .then(respone => respone.text())
