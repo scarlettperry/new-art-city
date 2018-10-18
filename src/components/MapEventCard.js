@@ -18,6 +18,7 @@ class MapEventCard extends Component {
             <div className='meta'>@{this.props.event.Venue.Name["_text"]}</div>
             <div className='description'>{this.props.event.Name["_text"]}</div>
             {/* <div className='extra'>Extra</div> */}
+            <button>Save to Profile</button>
           </div>
         </div>
       </div>
