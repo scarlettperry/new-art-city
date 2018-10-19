@@ -5,7 +5,9 @@
   "dependencies": {
     "google-map-react": "^1.0.9",
     "google-maps-react": "^2.0.2",
+    "moment": "^2.22.2",
     "react": "^16.5.2",
+    "react-big-calendar": "^0.20.1",
     "react-dom": "^16.5.2",
     "react-google-maps": "^9.4.5",
     "react-redux": "^5.0.7",
