@@ -10,30 +10,32 @@ class SingleExhibit extends Component {
 
 exhibitDetails = () => {
     if (this.props.event) {
-      return (
-        <div>
-          <Popup
-            trigger={<img src={this.props.event.Image[2]["_attributes"]["src"]} alt="event"/>}
-            modal
-            closeOnDocumentClick
-          >
-            <div>
-              {/* <img src={this.props.event.Image[2]["_attributes"]["src"]} alt="event"/> */}
-              {this.props.event.Name["_text"]}<br/>
-              @{this.props.event.Venue.Name["_text"]}<br/>
-              {/* <i>Days till closing</i>: {this.props.event.DaysBeforeEnd["_text"] === "0" ? <strong>TODAY</strong> : `${this.props.event.DaysBeforeEnd["_text"]}`}<br/> */}
+      if (!this.props.event.Image[2]["_attributes"]["src"].includes("nopic")) {
+        return (
+          <div className="column">
+            <Popup
+              trigger={<img src={this.props.event.Image[2]["_attributes"]["src"].slice(0,-4)} height="170" width="170"alt="event"/>}
+              modal
+              closeOnDocumentClick
+              >
+                <div>
+                  {/* <img src={this.props.event.Image[2]["_attributes"]["src"]} alt="event"/> */}
+                  {this.props.event.Name["_text"]}<br/>
+                  @{this.props.event.Venue.Name["_text"]}<br/>
+                  {/* <i>Days till closing</i>: {this.props.event.DaysBeforeEnd["_text"] === "0" ? <strong>TODAY</strong> : `${this.props.event.DaysBeforeEnd["_text"]}`}<br/> */}
+                </div>
+              </Popup>
+              <br/><button onClick={()=>this.props.postUserEvents(this.props.event)}>Save to Profile</button><br/><br/>
             </div>
-          </Popup>
-          <button onClick={()=>this.props.postUserEvents(this.props.event)}>Save to Profile</button><br/><br/>
-        </div>
-      )
+          )
+      }
     }
   }
 
   render(){
     // console.log(this.props)
     return (
-      <div>
+      <div className="child">
         {this.exhibitDetails()}
       </div>
     )

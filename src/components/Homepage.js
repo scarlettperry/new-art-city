@@ -75,13 +75,15 @@ class Homepage extends Component {
     // console.log(this.props)
     return (
       <div>
-        <Filter
-          handleFilter={this.handleFilter}
-        />
-        <ExhibitionGrid
-          events={this.filterMedia()}
-        />
-        <MapContainer />
+          <Filter
+            handleFilter={this.handleFilter}
+          />
+          <div className="wrapper">
+          <ExhibitionGrid
+            events={this.filterMedia()}
+          />
+          <MapContainer />
+        </div>
       </div>
     )
   }

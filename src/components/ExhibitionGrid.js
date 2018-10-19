@@ -12,7 +12,7 @@ class ExhibitionGrid extends Component {
       />)
 
     return (
-      <div className="exhibition-grid">
+      <div className="exhibition-grid exhibition-container row">
         {singleExhibit}
       </div>
     )
