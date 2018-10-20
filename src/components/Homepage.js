@@ -74,16 +74,14 @@ class Homepage extends Component {
   render(){
     // console.log(this.props)
     return (
-      <div>
-          <Filter
-            handleFilter={this.handleFilter}
-          />
-          <div className="wrapper">
+      <div className="wrapper">
+            <Filter
+              handleFilter={this.handleFilter}
+            />
           <ExhibitionGrid
             events={this.filterMedia()}
           />
           <MapContainer />
-        </div>
       </div>
     )
   }

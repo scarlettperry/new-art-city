@@ -4,7 +4,7 @@ class Filter extends Component {
 
   render(){
     return (
-      <div>
+      <div className="filter-container">
         <span>2D Media
         <select onChange={this.props.handleFilter} name="2D Media" id="type">
           <option value=""></option>

@@ -25,6 +25,12 @@
   /* border-style: solid; */
 }
 
+.filter-container {
+  grid-column: 2 / span 3;
+  grid-row: 2 / span 2;
+  /* border-style: solid; */
+}
+
 
 /* exhibition grid & single exhibit */
 /* Create three equal columns that floats next to each other */
