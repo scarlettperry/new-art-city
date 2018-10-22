@@ -27,7 +27,7 @@ class Filter extends Component {
           <option value="Installation">Installation</option>
           <option value="Product">Product</option>
           <option value="Ceramics">Ceramics</option>
-        </select></span>
+        </select></span><br/><br/>
 
         <span> Screen Media
         <select onChange={this.props.handleFilter} name="Screen Media" id="type">
@@ -41,7 +41,7 @@ class Filter extends Component {
         <select onChange={this.props.handleFilter} name="Other Media" id="type">
           <option value=""></option>
           <option value="Performance Art">Performance Art</option>
-        </select></span>
+        </select></span><br/><br/>
       </div>
     )
   }

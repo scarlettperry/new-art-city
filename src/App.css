@@ -37,7 +37,7 @@
 .column {
     float: left;
     width: 33.33%;
-    padding: 10px;
+    padding: 25px;
 }
 
 /* Clear floats after the columns */
@@ -47,6 +47,78 @@
     clear: both;
 }
 
+/* change cursor when on the exhibit cards*/
+.pointer {
+  cursor: pointer;
+}
+
+
+/* image overlay on exhibit cards*/
+.container {
+    position: relative;
+    /* width: 50%; */
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  /* height: auto; */
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: rgb(254,255,250);
+  color: black;
+  padding: 10px 10px;
+}
+
+.exhibit-details {
+  text-align: left;
+  background-color: rgb(254,255,250);
+}
+
+.event-date {
+  font-size: 25px;
+
+}
+
+.event-title {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+}
+
+.event-venue {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  color: rgb(103, 101, 98);
+}
+
+.event-description {
+  height: 150px;
+  padding: 20px;
+  overflow-y: scroll;
+}
 
 
 

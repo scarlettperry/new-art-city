@@ -1,6 +1,6 @@
 import React from "react";
 import { Marker, InfoWindow } from "react-google-maps";
-import point from "../images/point.png";
+import point from "../images/bluePoint.png";
 
 import MapEventCard from './MapEventCard'
 
