@@ -5,7 +5,7 @@
   overflow-y: scroll;
 }
 
-/* homepage grid - map & exhibition grid */
+/* homepage grid - map & exhibition & filter menu grid */
 .wrapper {
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -27,8 +27,8 @@
 
 .filter-container {
   grid-column: 2 / span 3;
-  grid-row: 2 / span 2;
-  /* border-style: solid; */
+  grid-row: 2;
+  background-color: rgb(235, 235, 235);
 }
 
 
@@ -51,7 +51,6 @@
 .pointer {
   cursor: pointer;
 }
-
 
 /* image overlay on exhibit cards*/
 .container {
@@ -93,6 +92,7 @@
   padding: 10px 10px;
 }
 
+/* styling for the pop up menu*/
 .exhibit-details {
   text-align: left;
   background-color: rgb(254,255,250);
@@ -100,7 +100,6 @@
 
 .event-date {
   font-size: 25px;
-
 }
 
 .event-title {
@@ -119,6 +118,9 @@
   padding: 20px;
   overflow-y: scroll;
 }
+
+
+
 
 
 

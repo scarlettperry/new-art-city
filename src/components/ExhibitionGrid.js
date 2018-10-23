@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import SingleExhibit from './SingleExhibit'
-// import { connect } from 'react-redux'
 
 class ExhibitionGrid extends Component {
 

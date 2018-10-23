@@ -6,7 +6,6 @@ import Popup from "reactjs-popup";
 class UserSingleExhibit extends Component {
 
   render(){
-    // console.log(this.props.event)
     return (
       <div>
         <Popup
@@ -16,7 +15,6 @@ class UserSingleExhibit extends Component {
           closeOnDocumentClick
         >
           <div>
-            {/* <img src={this.props.event["img_url"]} alt="event"/> */}
             {this.props.event["exhibition_name"]}<br/>
             @{this.props.event["venue_name"]}<br/>
           </div>

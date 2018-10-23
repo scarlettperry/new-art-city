@@ -14,7 +14,6 @@ class UserExhibitionGrid extends Component {
   }
 
   render(){
-    // console.log(this.props.userEvents)
     return (
       <div>
         {this.singleUserEvent()}

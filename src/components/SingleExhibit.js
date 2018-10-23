@@ -51,7 +51,7 @@ class SingleExhibit extends Component {
                 <div className="exhibit-details">
                   <br/>
                   <button onClick={this.handleToggle} className='ui icon button' role='button'>
-                    <i aria-hidden='true' className='heart icon' />
+                    <i aria-hidden='true' className='red heart icon' />
                     {!this.state.toggled? <span> Save</span> : <span> Unsave</span> }
                   </button><br/><br/>
                   <img src={this.props.event.Image[2]["_attributes"]["src"].slice(0,-4)} height="200" width="200"alt="event"/>

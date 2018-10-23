@@ -72,7 +72,6 @@ class Homepage extends Component {
   }//closes function
 
   render(){
-    // console.log(this.props)
     return (
       <div className="wrapper">
             <Filter
