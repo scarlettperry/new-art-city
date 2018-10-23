@@ -7,7 +7,7 @@ class Filter extends Component {
       <div className="filter-container">
         <span>2D Media
         <select onChange={this.props.handleFilter} name="2D Media" id="type">
-          <option value=""></option>
+          <option value="">All</option>
           <option value="Painting">Painting</option>
           <option value="Calligraphy">Calligraphy</option>
           <option value="Illustration">Illustration</option>
@@ -18,7 +18,7 @@ class Filter extends Component {
 
         <span> 3D Media
         <select onChange={this.props.handleFilter} name="3D Media" id="type">
-          <option value=""></option>
+          <option value="">All</option>
           <option value="Architecture">Architecture</option>
           <option value=" Sculpture"> Sculpture</option>
           <option value="Crafts">Crafts</option>
@@ -31,7 +31,7 @@ class Filter extends Component {
 
         <span> Screen Media
         <select onChange={this.props.handleFilter} name="Screen Media" id="type">
-          <option value=""></option>
+          <option value="">All</option>
           <option value="Film">Film</option>
           <option value="Digital">Digital</option>
           <option value="Video Installation">Video Installation</option>
@@ -39,7 +39,7 @@ class Filter extends Component {
 
         <span> Other Media
         <select onChange={this.props.handleFilter} name="Other Media" id="type">
-          <option value=""></option>
+          <option value="">All</option>
           <option value="Performance Art">Performance Art</option>
         </select></span><br/><br/>
       </div>

@@ -43,8 +43,6 @@
   grid-row: 3 / span 2;
 }
 
-
-
 /* exhibition grid & single exhibit */
 /* Create three equal columns that floats next to each other */
 .column {
@@ -134,7 +132,20 @@
 
 .app-title{
   font-family: 'Lato', sans-serif;
-font-size: 85px;
+  font-size: 85px;
+}
+
+
+/* select {
+    border:none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -ms-appearance: none;
+} */
+
+.select-label {
+  color: white;
 }
 
 
