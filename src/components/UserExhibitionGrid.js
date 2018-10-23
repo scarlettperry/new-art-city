@@ -15,7 +15,7 @@ class UserExhibitionGrid extends Component {
 
   render(){
     return (
-      <div>
+      <div className="exhibition-grid row user-events-container">
         {this.singleUserEvent()}
       </div>
     )

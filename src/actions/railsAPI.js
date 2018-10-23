@@ -42,7 +42,7 @@ export const postUserEvents = (eventObj) => {
         "phone_number": eventObj["Venue"]["Phone"]["_text"],
         "opening_hour": eventObj["Venue"]["OpeningHour"]["_text"],
         "closing_hour": eventObj["Venue"]["ClosingHour"]["_text"],
-        "img_url": eventObj["Image"][2]["_attributes"]["src"],
+        "img_url": eventObj["Image"][2]["_attributes"]["src"].slice(0,-4),
         "is_free": true
       })
     })

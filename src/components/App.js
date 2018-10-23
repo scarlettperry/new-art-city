@@ -23,7 +23,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>New Art City!</h1>
+        <h1 className="app-title">New Art City!</h1>
         <Navbar />
         <Switch>
           <Route exact path="/" component={Homepage}/>

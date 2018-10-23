@@ -10,26 +10,39 @@
   display: grid;
   grid-template-columns: 2fr 3fr;
   grid-gap: 10px;
+  padding: 15px;
 
+}
+
+.filter-container {
+  grid-column: 2 / span 3;
+  grid-row: 3;
+  background-color: rgb(235, 235, 235);
 }
 
 .map-container {
   grid-column: 1 / span 2;
-  grid-row: 2 / span 3;
+  grid-row: 3 / span 3;
   /* border-style: solid; */
 }
 
 .exhibition-container {
   grid-column: 2 / span 3;
-  grid-row: 3 / span 2;
+  grid-row: 4 / span 2;
   /* border-style: solid; */
 }
 
-.filter-container {
-  grid-column: 2 / span 3;
-  grid-row: 2;
-  background-color: rgb(235, 235, 235);
+.calendar-container {
+  grid-column: 3 / span 2;
+  grid-row: 3 / span 2;
+  align-items: l
 }
+
+.user-events-container{
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 2;
+}
+
 
 
 /* exhibition grid & single exhibit */
@@ -117,6 +130,11 @@
   height: 150px;
   padding: 20px;
   overflow-y: scroll;
+}
+
+.app-title{
+  font-family: 'Lato', sans-serif;
+font-size: 85px;
 }
 
 

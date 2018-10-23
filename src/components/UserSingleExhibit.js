@@ -7,10 +7,14 @@ class UserSingleExhibit extends Component {
 
   render(){
     return (
-      <div>
+      <div className="column pointer">
         <Popup
           trigger={
-            <img src={this.props.event["img_url"]} alt="event"/>}
+            <img
+              src={this.props.event["img_url"]}
+              height="170"
+              width="170"
+              alt="event"/>}
           modal
           closeOnDocumentClick
         >
@@ -18,8 +22,11 @@ class UserSingleExhibit extends Component {
             {this.props.event["exhibition_name"]}<br/>
             @{this.props.event["venue_name"]}<br/>
           </div>
-      </Popup>
-      <button>Delete Event</button><br/><br/>
+      </Popup><br/>
+      <button className='ui icon button' role='button'>
+        <i aria-hidden='true' className='red heart icon' />
+        <span> Unsave</span> 
+      </button>
     </div>
     )
   }

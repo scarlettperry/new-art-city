@@ -74,13 +74,13 @@ class Homepage extends Component {
   render(){
     return (
       <div className="wrapper">
-            <Filter
-              handleFilter={this.handleFilter}
-            />
-          <ExhibitionGrid
-            events={this.filterMedia()}
-          />
-          <MapContainer />
+        <Filter
+          handleFilter={this.handleFilter}
+        />
+        <ExhibitionGrid
+          events={this.filterMedia()}
+        />
+        <MapContainer />
       </div>
     )
   }
