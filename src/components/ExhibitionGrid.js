@@ -4,7 +4,6 @@ import SingleExhibit from './SingleExhibit'
 class ExhibitionGrid extends Component {
 
   render(){
-    console.log(this.props.events)
 
     let singleExhibit = this.props.events.map(obj =>
       <SingleExhibit

@@ -33,9 +33,10 @@ class Calendar extends Component {
   render() {
     const { from, to } = this.state;
     const modifiers = { start: from, end: to };
-    console.log(this.state)
-    console.log(this.props);
+
+    //redux dispatch
     this.props.setDateRange(this.state)
+
     return (
       <div className="RangeExample calendar-container">
         <p>
