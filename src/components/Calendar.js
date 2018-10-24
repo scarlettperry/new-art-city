@@ -3,7 +3,11 @@ import Helmet from 'react-helmet';
 import DayPicker, { DateUtils } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
-export default class Calendar extends Component {
+//redux
+import { connect } from 'react-redux'
+import { setDateRange } from '../actions/calendar'
+
+class Calendar extends Component {
   static defaultProps = {
     numberOfMonths: 2,
   };
@@ -30,6 +34,8 @@ export default class Calendar extends Component {
     const { from, to } = this.state;
     const modifiers = { start: from, end: to };
     console.log(this.state)
+    console.log(this.props);
+    this.props.setDateRange(this.state)
     return (
       <div className="RangeExample calendar-container">
         <p>
@@ -76,3 +82,5 @@ export default class Calendar extends Component {
     );
   }
 }
+
+export default connect(null, { setDateRange })(Calendar)

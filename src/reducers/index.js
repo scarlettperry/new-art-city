@@ -1,7 +1,8 @@
 const initialState = {
   events: [],
   filteredLocations : [],
-  userEvents: []
+  userEvents: [],
+  datesRange: ""
 }
 
 const reducer = (state = initialState, action) => {
@@ -25,12 +26,17 @@ const reducer = (state = initialState, action) => {
       }
 
     case "SELECTED_EVENT":
-    console.log(action.payload.eventObj)
-    console.log([...state.userEvents, action.payload.eventObj].flat())
       return {
         ...state,
         userEvents: [...state.userEvents, action.payload.eventObj].flat()
       }
+
+      case "SET_DATES_RANGE":
+      // console.log(action.payload.datesObj)
+        return {
+          ...state,
+          datesRange: action.payload.datesObj
+        }
 
     default:
      return state
