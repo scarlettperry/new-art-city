@@ -10,7 +10,7 @@ class UserExhibitionGrid extends Component {
   filterEventsByDate = () => {
     if (this.props.datesRange.from !== undefined && this.props.datesRange.to !== undefined) {
       return this.props.userEvents.filter(
-        event => moment(event["date_start"]).toDate() <= this.props.datesRange.from  && moment(event["date_end"]).toDate() >= this.props.datesRange.to
+        event => moment(event["date_start"]).toDate() <= this.props.datesRange.from  && moment(event["date_end"]).toDate() >= this.props.datesRange.to || event["date_start"] === "0000-00-00" && event["date_end"] === "0000-00-00"
       )
     }
     else {

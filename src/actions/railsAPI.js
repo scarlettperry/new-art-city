@@ -60,3 +60,13 @@ export const setUserEvent = (eventObj) => {
     }
   }
 }
+
+//remove exhibit from users events
+export const deleteUserExhibit = (eventObj) => {
+  return {
+    type: "REMOVE_USER_EVENT",
+    payload: {
+      eventObj
+    }
+  }
+}

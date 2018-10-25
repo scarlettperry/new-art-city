@@ -38,6 +38,14 @@ const reducer = (state = initialState, action) => {
           datesRange: action.payload.datesObj
         }
 
+      case "REMOVE_USER_EVENT":
+      // console.log(action.payload.eventObj);
+      let filteredUserEvents = state.userEvents.filter(event => event.id !== action.payload.eventObj.id)
+        return {
+          ...state,
+          userEvents: filteredUserEvents
+        }
+
     default:
      return state
   }
