@@ -2,6 +2,10 @@
 
 *New Art City!*, an information gathering application for art lovers/casual enthusiasts to browse and bookmark current art exhibitions in NYC.
 
+![Screenshot](readmeImg1.png)
+
+![Screenshot](readmeImg2.png)
+
 ## Application Features
 - User can filter art exhibits by multiple media categories.
 
