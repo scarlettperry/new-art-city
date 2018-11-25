@@ -2,7 +2,7 @@
 export const loadUserEvents = () => {
   // console.log("yay im getting user events!")
   return (dispatch) => {
-    fetch("http://localhost:3000/api/v1/users/1/events")
+    fetch("https://new-art-city-backend.herokuapp.com/api/v1/users/1/events")
     .then(resp=> resp.json())
     .then(eventsArray => dispatch(setUserEvents(eventsArray)))
   }
@@ -24,7 +24,7 @@ export const postUserEvents = (eventObj) => {
   // console.log("yay in posting an event!")
   console.log(eventObj)
   return (dispatch) => {
-    fetch("http://localhost:3000/api/v1/users/1/events", {
+    fetch("https://new-art-city-backend.herokuapp.com/api/v1/users/1/events", {
       method: "POST",
       headers: {"Content-type": "application/json"},
       body: JSON.stringify({
