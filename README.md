@@ -2,6 +2,8 @@
 
 *New Art City!*, an information gathering application for art lovers/casual enthusiasts to browse and bookmark current art exhibitions in NYC.
 
+**Check out the hosted project on Heroku:** https://new-art-city.herokuapp.com/
+
 ![Screenshot](readmeImg1.png)
 
 ![Screenshot](readmeImg2.png)
