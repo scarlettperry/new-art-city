@@ -4,7 +4,7 @@ import Popup from "reactjs-popup";
 import { Accordion, Icon } from 'semantic-ui-react'
 import moment from 'moment'
 import { connect } from 'react-redux'
-import { deleteUserExhibit } from '../actions/railsAPI'
+import { deleteUserEvent } from '../actions/railsAPI'
 
 class UserSingleExhibit extends Component {
 
@@ -74,7 +74,7 @@ class UserSingleExhibit extends Component {
             </Accordion>
             </div>
       </Popup><br/>
-      <button onClick={()=>this.props.deleteUserExhibit(this.props.event)} className='ui icon button' role='button'>
+      <button onClick={()=>this.props.deleteUserEvent(this.props.event)} className='ui icon button' role='button'>
         <i aria-hidden='true' className='red heart icon' />
         <span> Unsave</span>
       </button>
@@ -83,4 +83,4 @@ class UserSingleExhibit extends Component {
   }
 }
 
-export default connect(null, { deleteUserExhibit })(UserSingleExhibit)
+export default connect(null, { deleteUserEvent })(UserSingleExhibit)
