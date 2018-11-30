@@ -61,7 +61,17 @@ export const setUserEvent = (eventObj) => {
   }
 }
 
-//remove exhibit from users events
+export const deleteUserEvent = (eventObj) => {
+  return (dispatch) => {
+    fetch(`https://new-art-city-backend.herokuapp.com/api/v1/users/1/events/${eventObj.id}`, {
+      method: "DELETE"
+    })
+    .then(eventObj => dispatch(deleteUserExhibit(eventObj)))
+  }
+}
+
+
+//herlper for delete event
 export const deleteUserExhibit = (eventObj) => {
   return {
     type: "REMOVE_USER_EVENT",

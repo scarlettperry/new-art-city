@@ -39,7 +39,7 @@ const reducer = (state = initialState, action) => {
         }
 
       case "REMOVE_USER_EVENT":
-      // console.log(action.payload.eventObj);
+      console.log(action.payload.eventObj.id);
       let filteredUserEvents = state.userEvents.filter(event => event.id !== action.payload.eventObj.id)
         return {
           ...state,
