@@ -63,10 +63,10 @@ export const setUserEvent = (eventObj) => {
 
 export const deleteUserEvent = (eventObj) => {
   return (dispatch) => {
+    dispatch(deleteUserExhibit(eventObj))
     fetch(`https://new-art-city-backend.herokuapp.com/api/v1/users/1/events/${eventObj.id}`, {
       method: "DELETE"
     })
-    .then(eventObj => dispatch(deleteUserExhibit(eventObj)))
   }
 }
 
