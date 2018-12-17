@@ -40,7 +40,7 @@ class Calendar extends Component {
     return (
       <div className="RangeExample calendar-container">
         <p>
-          {!from && !to && 'Please select the first day.'}
+          {!from && !to && 'Please select the first day you would be free to see an exhibit.'}
           {from && !to && 'Please select the last day.'}
           {from &&
             to &&
