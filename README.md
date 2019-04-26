@@ -20,11 +20,12 @@ https://drive.google.com/file/d/1LNDjMwa7zMj-zvyjvWM3HTqTp4oGObOI/view
 
 - User can plan their visit to their bookmarked exhibits using the calendar, which takes in a range of dates and filters exhibits happening during the date range.
 
-
-## Built With
+## Frontend Built With
 - React
 - Google Maps `react-google-maps`
 - Calendar `react-day-picker`
+
+## Backend Built With
 - Ruby
 - Rails API utilizing Active Model Serializers
 - Sqlite3 Database using ActiveRecord
